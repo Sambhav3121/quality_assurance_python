@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Image</title>
+</head>
+<body>
+    <h1>Rotate Image</h1>
+    <form method="post" action="/rotate">
+        <label for="matrix">Matrix (rows separated by ';', elements by ','):</label><br>
+        <input type="text" id="matrix" name="matrix" value="{{ matrix|default('') }}"><br><br>
+        <input type="submit" value="Rotate">
+    </form>
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+    {% endif %}
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
